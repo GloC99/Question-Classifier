@@ -11,11 +11,11 @@ The classifier is used to do a task such as
 
 
 ``` shell
-# Install pytorch library if you do not
-pip3 install --user torch
+# Install pytorch library if you do not already have it
+$ pip3 install --user torch
 
-# Install sklearn library if you do not
-pip3 install --user scikit-learn
+# Install sklearn library if you do not already have it
+$ pip3 install --user scikit-learn
 ```
 
 #### Folders descriptions
@@ -26,20 +26,20 @@ pip3 install --user scikit-learn
 ```src```: source code.
 
 #### How to use the classifier
-Dowload all the three folders and move to ```src``` folder.
+Download all three folders and move to ```src``` folder.
 
 ``` shell
-cd src
+$ cd src
 ```
 
-Below are the **training steps** , every training needs few minutes to complete.
+Below are the **training steps** , every training needs a few minutes to complete.
 
 ``` shell
 # If you want to train the Bilstm model
-python3 question_classifier.py --train --config '../data/bilstm.config'
+$ python3 question_classifier.py --train --config '../data/bilstm.config'
 
 # If you want to train the Bag of Words model
-python3 question_classifier.py --train --config '../data/bow.config'
+$ python3 question_classifier.py --train --config '../data/bow.config'
 ```
 
 Below are the **testing steps**, **REMEMBER** you should run the corresponding training step of the classified model above firstly, and for the **Ensemble model**, you need to train both classified models firstly, i.e. training the Bilstm and Bow models at first, and then you are
@@ -47,20 +47,20 @@ allowed to ensemble a model and test it.
 
 ``` shell
 # If you want to test the Bilstm model
-python3 question_classifier.py --test --config '../data/bilstm.config'
+$ python3 question_classifier.py --test --config '../data/bilstm.config'
 
 # If you want to test the Bag of Words model
-python3 question_classifier.py --test --config '../data/bow.config'
+$ python3 question_classifier.py --test --config '../data/bow.config'
 
 # If you want to test the ensemble model
-python3 question_classifier.py --test --config '../data/ensemble.config'
+$ python3 question_classifier.py --test --config '../data/ensemble.config'
 ```
 
 ### How to adjust the parameters of both classifiers
 Move to the ```data``` folder
 
 ``` shell
-cd data
+$ cd data
 
 ```
 
